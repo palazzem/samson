@@ -46,11 +46,13 @@ gem 'concurrent-ruby'
 gem 'vault'
 gem 'docker-api'
 gem 'newrelic_rpm'
-gem 'ddtrace' # datadog APM
 gem 'lograge'
 gem 'logstash-event'
 gem 'diffy'
 gem 'validates_lengths_from_database'
+
+# datadog APM Release Candidate (pin the version when the release is out)
+gem 'ddtrace', :git => 'https://github.com/DataDog/dd-trace-rb.git', :tag => '0.9.0-RC1'
 
 # treat included plugins like gems
 Dir[File.join(Bundler.root, 'plugins/*/')].each { |f| gemspec path: f }
